@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +22,7 @@
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
+    /* Header */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #eee}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700}
@@ -31,14 +30,16 @@
     .nav a{font-weight:600;margin-left:16px}
     .cta-btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
+    section, main{scroll-margin-top:84px}
 
-    .hero{padding:64px 0 40px;
-      background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
+    /* Hero */
+    .hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
     .hero h1{font:700 clamp(28px,4.5vw,46px) 'Playfair Display',serif;margin:0 0 12px}
     .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
     .hero-card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
 
+    /* Sections */
     .section{padding:56px 0}
     .section h2{font:700 clamp(24px,3.2vw,36px) 'Playfair Display',serif;margin:0 0 14px}
     .kicker{color:var(--brand-dark);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
@@ -48,13 +49,20 @@
     .treatments{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 
+    /* About */
     .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
     .about img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/3}
 
+    /* Gallery placeholders */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .ph{height:280px;border-radius:var(--radius);background:linear-gradient(135deg,#f6ecf3,#ffffff);border:1px dashed #e2d7df}
+
+    /* Footer */
     footer{padding:36px 0;border-top:1px solid #eee;background:#fff}
     .footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
     .small{font-size:13px}
 
+    /* WhatsApp */
     .whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:900;font-weight:700}
     .whatsapp-fab:hover{filter:brightness(.95);text-decoration:none}
 
@@ -90,7 +98,7 @@
     <aside class="hero-card">
       <h3>Speak to Joanne</h3>
       <p><strong>Phone:</strong> <a href="tel:+447714201913">07714 201913</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank">Chat now</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener">Chat now</a></p>
     </aside>
   </div>
 </main>
@@ -99,10 +107,26 @@
   <p class="kicker">Treatments</p>
   <h2>Our Treatments</h2>
   <div class="grid treatments">
-    <article class="card"><h3>Skin Boosters</h3></article>
-    <article class="card"><h3>Wrinkle Softening</h3></article>
-    <article class="card"><h3>Dermal Fillers</h3></article>
-    <article class="card"><h3>Skin Health</h3></article>
+    <article class="card">
+      <h3>Skin Boosters</h3>
+      <p class="muted">Hydrating injectables to restore glow, elasticity and overall skin health.</p>
+    </article>
+    <article class="card">
+      <h3>Wrinkle Softening</h3>
+      <p class="muted">Gentle softening of lines while keeping natural movement and expression.</p>
+    </article>
+    <article class="card">
+      <h3>Dermal Fillers</h3>
+      <p class="muted">Premium HA fillers for lips, cheeks and jawline definition — always subtle.</p>
+    </article>
+    <article class="card">
+      <h3>Skin Health</h3>
+      <p class="muted">Medical facials, microneedling and peels to brighten and refine texture.</p>
+    </article>
+    <article class="card">
+      <h3>Consultations</h3>
+      <p class="muted">Friendly, no-obligation chats to plan your journey and answer questions.</p>
+    </article>
   </div>
 </section>
 
@@ -115,16 +139,18 @@
     <li>Skin Boosters: from £170</li>
     <li>Skin Health: from £65</li>
   </ul>
+  <p class="small muted">Final pricing is confirmed at consultation. Suitability assessed by Joanne.</p>
 </section>
 
 <section id="gallery" class="section container">
   <p class="kicker">Gallery</p>
   <h2>Before & After</h2>
   <p class="muted">Add your client results here when ready.</p>
-  <div class="grid treatments">
-    <div class="card">Placeholder</div>
-    <div class="card">Placeholder</div>
-    <div class="card">Placeholder</div>
+  <div class="gallery">
+    <div class="ph" aria-hidden="true"></div>
+    <div class="ph" aria-hidden="true"></div>
+    <div class="ph" aria-hidden="true"></div>
+    <div class="ph" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -133,7 +159,12 @@
   <div class="about">
     <div>
       <h2>Meet Joanne</h2>
-      <p>Joanne Burley is the face behind Beautywithin Aesthetics. With a passion for subtle enhancement and client education, Joanne focuses on treatments that prioritise safety, comfort and natural results.</p>
+      <p>Joanne Burley is the face behind Beautywithin Aesthetics. With a passion for subtle enhancement and client education, Joanne focuses on treatments that prioritise safety, comfort and natural-looking results.</p>
+      <ul class="muted">
+        <li>Fully insured & trained</li>
+        <li>Clean, private treatment space</li>
+        <li>Strict hygiene standards</li>
+      </ul>
     </div>
     <img src="joanne.jpg?v=2" alt="Joanne Burley, Beautywithin Aesthetics">
   </div>
@@ -143,7 +174,7 @@
   <p class="kicker">Contact</p>
   <h2>Book Your Consultation</h2>
   <p><strong>Phone:</strong> <a href="tel:+447714201913">07714 201913</a></p>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank">Chat now</a></p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener">Chat now</a></p>
 </section>
 
 <footer>
@@ -156,9 +187,8 @@
   </div>
 </footer>
 
-<a class="whatsapp-fab" href="https://wa.me/447714201913" target="_blank">WhatsApp</a>
+<a class="whatsapp-fab" href="https://wa.me/447714201913" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
 
