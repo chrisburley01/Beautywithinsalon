@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beautywithin Aesthetics | By Joanne Burley</title>
   <meta name="description" content="Beautywithin Aesthetics by Joanne Burley – professional, safe, natural-looking aesthetic treatments." />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="icon" href="BWA-Logo-no-name-PRINT.png">
+  <link rel="icon" href="BWA-Logo-no-name-PRINT.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -23,33 +22,47 @@
     a{color:var(--brand-dark);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    /* Header */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #eee}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo-img{height:42px;width:auto;object-fit:contain;background:transparent}
+    .logo-img{height:42px;width:auto;object-fit:contain}
     .nav a{font-weight:600;margin-left:16px}
     .cta-btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
     section, main{scroll-margin-top:84px}
+
+    /* Hero */
     .hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
     .hero h1{font:700 clamp(28px,4.5vw,46px) 'Playfair Display',serif;margin:0 0 12px}
     .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
     .hero-card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Sections */
     .section{padding:56px 0}
     .section h2{font:700 clamp(24px,3.2vw,36px) 'Playfair Display',serif;margin:0 0 14px}
     .kicker{color:var(--brand-dark);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
     .muted{color:var(--muted)}
+
     .grid{display:grid;gap:18px}
     .treatments{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .pill{display:inline-block;border:1px solid #e7ddec;border-radius:999px;padding:6px 10px;font-size:12px;margin-right:6px;color:#7a5f77;background:#fff}
+
+    /* About */
     .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
     .about img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/3}
+
+    /* Footer */
     footer{padding:36px 0;border-top:1px solid #eee;background:#fff}
     .footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
     .small{font-size:13px}
+
+    /* WhatsApp */
     .whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:900;font-weight:700}
+    .whatsapp-fab:hover{filter:brightness(.95);text-decoration:none}
+
     @media (max-width:880px){.hero-grid,.about{grid-template-columns:1fr}}
   </style>
 </head>
@@ -57,7 +70,7 @@
 <header>
   <nav class="container nav">
     <div class="logo">
-      <img src="BWA-Logo-no-name-PRINT.png" alt="Beautywithin Aesthetics logo" class="logo-img" />
+      <img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img" />
       <span>Beautywithin&nbsp;<span class="muted">Aesthetics</span></span>
     </div>
     <div>
@@ -127,7 +140,7 @@
       <h2>Meet Joanne</h2>
       <p>Joanne Burley is the face behind Beautywithin Aesthetics. With a passion for subtle enhancement and client education, Joanne focuses on treatments that prioritise safety, comfort and natural results.</p>
     </div>
-    <img src="joanne.jpg" alt="Joanne Burley, Beautywithin Aesthetics">
+    <img src="joanne.jpg?v=2" alt="Joanne Burley, Beautywithin Aesthetics">
   </div>
 </section>
 
@@ -140,7 +153,10 @@
 
 <footer>
   <div class="container footgrid">
-    <div class="logo"><img src="BWA-Logo-no-name-PRINT.png" class="logo-img"/>Beautywithin Aesthetics</div>
+    <div class="logo">
+      <img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>
+      Beautywithin Aesthetics
+    </div>
     <p class="small muted">© <span id="year"></span> Beautywithin Aesthetics</p>
   </div>
 </footer>
