@@ -25,6 +25,14 @@
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
     section,main{scroll-margin-top:84px}
 
+    /* Glow pulse for buttons */
+    .glow { animation: pulseGlow 2s infinite; }
+    @keyframes pulseGlow {
+      0%   { box-shadow: 0 0 0px rgba(212,172,197,0.7); }
+      50%  { box-shadow: 0 0 12px rgba(212,172,197,0.9); }
+      100% { box-shadow: 0 0 0px rgba(212,172,197,0.7); }
+    }
+
     /* Hero */
     .hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
@@ -93,8 +101,12 @@
     </div>
     <aside class="hero-card">
       <h3>Speak to Joanne</h3>
-      <p><strong>Phone:</strong> <a href="tel:+447714201913">07714 201913</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener">Chat now</a></p>
+      <p><strong>Phone:</strong> 
+        <a href="tel:+447714201913" class="cta-btn glow">07714 201913</a>
+      </p>
+      <p><strong>WhatsApp:</strong> 
+        <a href="https://wa.me/447714201913" target="_blank" rel="noopener" class="cta-btn glow">Chat now</a>
+      </p>
     </aside>
   </div>
 </main>
@@ -168,38 +180,10 @@
   <h2>Before & After</h2>
   <p class="muted">Upload your own client results when ready. For now, these branded placeholders show the layout.</p>
   <div class="ba-grid">
-    <div class="ba">
-      <div class="ba-head">Skin Boosters</div>
-      <div class="ba-body">
-        <div class="ba-half before"><span class="ba-label">Before</span></div>
-        <div class="ba-half after"><span class="ba-label">After</span></div>
-      </div>
-      <div class="ba-foot">Hydration & glow after a course of treatment.</div>
-    </div>
-    <div class="ba">
-      <div class="ba-head">Wrinkle Softening</div>
-      <div class="ba-body">
-        <div class="ba-half before"><span class="ba-label">Before</span></div>
-        <div class="ba-half after"><span class="ba-label">After</span></div>
-      </div>
-      <div class="ba-foot">Softer lines, natural movement maintained.</div>
-    </div>
-    <div class="ba">
-      <div class="ba-head">Dermal Fillers</div>
-      <div class="ba-body">
-        <div class="ba-half before"><span class="ba-label">Before</span></div>
-        <div class="ba-half after"><span class="ba-label">After</span></div>
-      </div>
-      <div class="ba-foot">Subtle lip/cheek enhancement for balance.</div>
-    </div>
-    <div class="ba">
-      <div class="ba-head">Skin Health</div>
-      <div class="ba-body">
-        <div class="ba-half before"><span class="ba-label">Before</span></div>
-        <div class="ba-half after"><span class="ba-label">After</span></div>
-      </div>
-      <div class="ba-foot">Brighter tone and refined texture.</div>
-    </div>
+    <div class="ba"><div class="ba-head">Skin Boosters</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Hydration & glow after a course of treatment.</div></div>
+    <div class="ba"><div class="ba-head">Wrinkle Softening</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Softer lines, natural movement maintained.</div></div>
+    <div class="ba"><div class="ba-head">Dermal Fillers</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Subtle lip/cheek enhancement for balance.</div></div>
+    <div class="ba"><div class="ba-head">Skin Health</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Brighter tone and refined texture.</div></div>
   </div>
 </section>
 
@@ -218,8 +202,8 @@
 <section id="contact" class="section container">
   <p class="kicker">Contact</p>
   <h2>Book Your Consultation</h2>
-  <p><strong>Phone:</strong> <a href="tel:+447714201913">07714 201913</a></p>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener">Chat now</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+447714201913" class="cta-btn glow">07714 201913</a></p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener" class="cta-btn glow">Chat now</a></p>
 </section>
 
 <footer>
