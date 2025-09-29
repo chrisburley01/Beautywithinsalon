@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,65 +6,43 @@
   <title>Beautywithin Aesthetics | By Joanne Burley</title>
   <meta name="description" content="Beautywithin Aesthetics by Joanne Burley – professional, safe, natural-looking aesthetic treatments." />
   <link rel="icon" href="BWA-Logo-no-name-PRINT.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#fff; --text:#222; --muted:#666;
-      --brand:#d4acc5; --brand-dark:#8e7686; --card:#fff6f9;
-      --shadow:0 10px 24px rgba(0,0,0,.06); --radius:18px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
-    a{color:var(--brand-dark);text-decoration:none}
-    a:hover{text-decoration:underline}
+    :root{--bg:#fff;--text:#222;--muted:#666;--brand:#d4acc5;--brand-dark:#8e7686;--card:#fff6f9;--shadow:0 10px 24px rgba(0,0,0,.06);--radius:18px}
+    *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+    a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
-
-    /* Header */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #eee}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo-img{height:42px;width:auto;object-fit:contain}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}.logo-img{height:42px;width:auto;object-fit:contain}
     .nav a{font-weight:600;margin-left:16px}
     .cta-btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
-    section, main{scroll-margin-top:84px}
-
-    /* Hero */
+    section,main{scroll-margin-top:84px}
     .hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
     .hero h1{font:700 clamp(28px,4.5vw,46px) 'Playfair Display',serif;margin:0 0 12px}
     .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
     .hero-card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
-
-    /* Sections */
-    .section{padding:56px 0}
-    .section h2{font:700 clamp(24px,3.2vw,36px) 'Playfair Display',serif;margin:0 0 14px}
-    .kicker{color:var(--brand-dark);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    .muted{color:var(--muted)}
-
-    .grid{display:grid;gap:18px}
-    .treatments{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .section{padding:56px 0}.section h2{font:700 clamp(24px,3.2vw,36px) 'Playfair Display',serif;margin:0 0 14px}
+    .kicker{color:var(--brand-dark);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}.treatments{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-
-    /* About */
     .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
     .about img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/3}
-
-    /* Gallery placeholders */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .ph{height:280px;border-radius:var(--radius);background:linear-gradient(135deg,#f6ecf3,#ffffff);border:1px dashed #e2d7df}
-
-    /* Footer */
-    footer{padding:36px 0;border-top:1px solid #eee;background:#fff}
-    .footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-    .small{font-size:13px}
-
-    /* WhatsApp */
+    /* Branded BEFORE/AFTER cards */
+    .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .ba{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid #f0e6ee}
+    .ba-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);font-weight:700}
+    .ba-body{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #f3e9f1}
+    .ba-half{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative}
+    .ba-half.before{background:linear-gradient(135deg,#f4e9f1,#ffffff)}
+    .ba-half.after{background:linear-gradient(135deg,#fbefff,#f6e9f3)}
+    .ba-label{position:absolute;top:8px;left:8px;font-size:12px;background:#fff;border:1px solid #e9ddea;border-radius:999px;padding:4px 8px;color:#7a5f77}
+    .ba-foot{padding:10px 14px;color:var(--muted);font-size:13px;border-top:1px solid #f3e9f1}
+    footer{padding:36px 0;border-top:1px solid #eee;background:#fff}.footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}.small{font-size:13px}
     .whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:900;font-weight:700}
-    .whatsapp-fab:hover{filter:brightness(.95);text-decoration:none}
-
     @media (max-width:880px){.hero-grid,.about{grid-template-columns:1fr}}
   </style>
 </head>
@@ -77,12 +54,8 @@
       <span>Beautywithin&nbsp;<span class="muted">Aesthetics</span></span>
     </div>
     <div>
-      <a href="#home">Home</a>
-      <a href="#treatments">Treatments</a>
-      <a href="#prices">Prices</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="cta-btn">Contact</a>
+      <a href="#home">Home</a><a href="#treatments">Treatments</a><a href="#prices">Prices</a>
+      <a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact" class="cta-btn">Contact</a>
     </div>
   </nav>
 </header>
@@ -107,26 +80,11 @@
   <p class="kicker">Treatments</p>
   <h2>Our Treatments</h2>
   <div class="grid treatments">
-    <article class="card">
-      <h3>Skin Boosters</h3>
-      <p class="muted">Hydrating injectables to restore glow, elasticity and overall skin health.</p>
-    </article>
-    <article class="card">
-      <h3>Wrinkle Softening</h3>
-      <p class="muted">Gentle softening of lines while keeping natural movement and expression.</p>
-    </article>
-    <article class="card">
-      <h3>Dermal Fillers</h3>
-      <p class="muted">Premium HA fillers for lips, cheeks and jawline definition — always subtle.</p>
-    </article>
-    <article class="card">
-      <h3>Skin Health</h3>
-      <p class="muted">Medical facials, microneedling and peels to brighten and refine texture.</p>
-    </article>
-    <article class="card">
-      <h3>Consultations</h3>
-      <p class="muted">Friendly, no-obligation chats to plan your journey and answer questions.</p>
-    </article>
+    <article class="card"><h3>Skin Boosters</h3><p class="muted">Hydrating injectables to restore glow, elasticity and overall skin health.</p></article>
+    <article class="card"><h3>Wrinkle Softening</h3><p class="muted">Gentle softening of lines while keeping natural movement and expression.</p></article>
+    <article class="card"><h3>Dermal Fillers</h3><p class="muted">Premium HA fillers for lips, cheeks and jawline definition — always subtle.</p></article>
+    <article class="card"><h3>Skin Health</h3><p class="muted">Medical facials, microneedling and peels to brighten and refine texture.</p></article>
+    <article class="card"><h3>Consultations</h3><p class="muted">Friendly, no-obligation chats to plan your journey and answer questions.</p></article>
   </div>
 </section>
 
@@ -145,12 +103,40 @@
 <section id="gallery" class="section container">
   <p class="kicker">Gallery</p>
   <h2>Before & After</h2>
-  <p class="muted">Add your client results here when ready.</p>
-  <div class="gallery">
-    <div class="ph" aria-hidden="true"></div>
-    <div class="ph" aria-hidden="true"></div>
-    <div class="ph" aria-hidden="true"></div>
-    <div class="ph" aria-hidden="true"></div>
+  <p class="muted">Upload your own client results when ready. For now, these branded placeholders show the layout.</p>
+  <div class="ba-grid">
+    <div class="ba">
+      <div class="ba-head">Skin Boosters</div>
+      <div class="ba-body">
+        <div class="ba-half before"><span class="ba-label">Before</span></div>
+        <div class="ba-half after"><span class="ba-label">After</span></div>
+      </div>
+      <div class="ba-foot">Hydration & glow after a course of treatment.</div>
+    </div>
+    <div class="ba">
+      <div class="ba-head">Wrinkle Softening</div>
+      <div class="ba-body">
+        <div class="ba-half before"><span class="ba-label">Before</span></div>
+        <div class="ba-half after"><span class="ba-label">After</span></div>
+      </div>
+      <div class="ba-foot">Softer lines, natural movement maintained.</div>
+    </div>
+    <div class="ba">
+      <div class="ba-head">Dermal Fillers</div>
+      <div class="ba-body">
+        <div class="ba-half before"><span class="ba-label">Before</span></div>
+        <div class="ba-half after"><span class="ba-label">After</span></div>
+      </div>
+      <div class="ba-foot">Subtle lip/cheek enhancement for balance.</div>
+    </div>
+    <div class="ba">
+      <div class="ba-head">Skin Health</div>
+      <div class="ba-body">
+        <div class="ba-half before"><span class="ba-label">Before</span></div>
+        <div class="ba-half after"><span class="ba-label">After</span></div>
+      </div>
+      <div class="ba-foot">Brighter tone and refined texture.</div>
+    </div>
   </div>
 </section>
 
@@ -160,11 +146,7 @@
     <div>
       <h2>Meet Joanne</h2>
       <p>Joanne Burley is the face behind Beautywithin Aesthetics. With a passion for subtle enhancement and client education, Joanne focuses on treatments that prioritise safety, comfort and natural-looking results.</p>
-      <ul class="muted">
-        <li>Fully insured & trained</li>
-        <li>Clean, private treatment space</li>
-        <li>Strict hygiene standards</li>
-      </ul>
+      <ul class="muted"><li>Fully insured & trained</li><li>Clean, private treatment space</li><li>Strict hygiene standards</li></ul>
     </div>
     <img src="joanne.jpg?v=2" alt="Joanne Burley, Beautywithin Aesthetics">
   </div>
@@ -179,10 +161,7 @@
 
 <footer>
   <div class="container footgrid">
-    <div class="logo">
-      <img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>
-      Beautywithin Aesthetics
-    </div>
+    <div class="logo"><img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>Beautywithin Aesthetics</div>
     <p class="small muted">© <span id="year"></span> Beautywithin Aesthetics</p>
   </div>
 </footer>
@@ -191,4 +170,3 @@
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
