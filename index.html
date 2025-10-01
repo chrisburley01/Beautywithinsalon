@@ -17,38 +17,48 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #eee}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;position:relative}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700}
     .logo-img{height:42px;width:auto;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:16px}
-    .nav a{font-weight:600}
     .cta-btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
     section,main{scroll-margin-top:84px}
-    .menu-toggle { display:none; border:0; background:transparent; font-size:26px; line-height:1; padding:8px 10px; }
 
-    /* mobile menu panel (hidden by default) */
-    .mobile-menu{
-      display:none;
-      position:fixed; top:64px; right:16px; left:16px;
-      background:#fff; border:1px solid #eee; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,.12);
-      padding:14px; z-index:80;
-    }
-    .mobile-menu a{ display:block; padding:12px 10px; font-weight:600; border-radius:10px; }
-    .mobile-menu a:hover{ background:#faf5f8; text-decoration:none; }
-    @media (max-width: 820px){
-      .nav-links{ display:none; }
-      .menu-toggle{ display:block; }
-    }
-    .mobile-menu.open{ display:block; }
-
-    /* Glow pulse */
+    /* Glow pulse (used by buttons + hamburger) */
     .glow { animation: pulseGlow 2s infinite; }
     @keyframes pulseGlow {
-      0%   { box-shadow: 0 0 0px rgba(212,172,197,0.65); }
-      50%  { box-shadow: 0 0 12px rgba(212,172,197,0.9); }
-      100% { box-shadow: 0 0 0px rgba(212,172,197,0.65); }
+      0%   { box-shadow: 0 0 0px rgba(212,172,197,0.55); }
+      50%  { box-shadow: 0 0 14px rgba(212,172,197,0.95); }
+      100% { box-shadow: 0 0 0px rgba(212,172,197,0.55); }
     }
+
+    /* Hamburger button */
+    .menu-toggle{
+      display:none;border:0;cursor:pointer;
+      font-size:20px;line-height:1;
+      padding:10px 12px;border-radius:12px;
+      background:var(--brand);color:#fff;
+    }
+
+    /* Mobile menu + animation */
+    .mobile-wrap{position:relative}
+    .menu-backdrop{
+      position:fixed;inset:0;background:rgba(0,0,0,.25);
+      opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:79;
+    }
+    .menu-backdrop.open{opacity:1;pointer-events:auto}
+
+    .mobile-menu{
+      position:fixed;right:16px;left:16px;top:64px;z-index:80;
+      background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.12);
+      padding:14px;
+      transform:translateY(-12px);opacity:0;pointer-events:none;
+      transition:transform .25s ease, opacity .25s ease;
+    }
+    .mobile-menu a{display:block;padding:12px 10px;font-weight:600;border-radius:10px}
+    .mobile-menu a:hover{background:#faf5f8;text-decoration:none}
+    .mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
 
     /* Hero */
     .hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% -10%, #f6edf3 0%, #fff 60%)}
@@ -62,7 +72,6 @@
     .section h2{font:700 clamp(24px,3.2vw,36px) 'Playfair Display',serif;margin:0 0 14px}
     .kicker{color:var(--brand-dark);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
     .muted{color:var(--muted)}
-
     .grid{display:grid;gap:18px}
     .treatments{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
@@ -89,9 +98,18 @@
     .whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:900;font-weight:700}
     .whatsapp-fab.glow { animation: pulseGlow 2.2s infinite; }
     .whatsapp-fab:hover{filter:brightness(.95);text-decoration:none}
+
+    /* Responsive */
+    @media (max-width: 820px){
+      .nav-links{ display:none; }
+      .menu-toggle{ display:block; }
+    }
+    @media (max-width: 380px){ .logo-img{ height:36px; } }
+    @media (max-width:880px){ .hero-grid,.about{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
+
 <header>
   <nav class="container nav">
     <div class="logo">
@@ -99,6 +117,7 @@
       <span>Beautywithin&nbsp;<span class="muted">Aesthetics</span></span>
     </div>
 
+    <!-- desktop links -->
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#treatments">Treatments</a>
@@ -108,16 +127,21 @@
       <a href="#contact" class="cta-btn glow">Contact</a>
     </div>
 
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
+    <!-- glowing hamburger for mobile -->
+    <button class="menu-toggle glow" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">☰</button>
   </nav>
 
-  <div id="mobileMenu" class="mobile-menu">
-    <a href="#home">Home</a>
-    <a href="#treatments">Treatments</a>
-    <a href="#prices">Prices</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="cta-btn glow">Contact</a>
+  <!-- mobile overlay + menu -->
+  <div class="mobile-wrap">
+    <div id="menuBackdrop" class="menu-backdrop"></div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#home">Home</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#prices">Prices</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="cta-btn glow">Contact</a>
+    </div>
   </div>
 </header>
 
@@ -210,10 +234,10 @@
   <h2>Before & After</h2>
   <p class="muted">Real client results with Joanne. Subtle, safe, natural-looking enhancements.</p>
   <div class="ba-grid">
-    <div class="ba"><div class="ba-head">Skin Boosters</div><div class="ba-body"><div class="ba-half"><img src="before1.jpg"></div><div class="ba-half"><img src="after1.jpg"></div></div><div class="ba-foot">Hydration & glow after a course of treatment.</div></div>
-    <div class="ba"><div class="ba-head">Wrinkle Softening</div><div class="ba-body"><div class="ba-half"><img src="before2.jpg"></div><div class="ba-half"><img src="after2.jpg"></div></div><div class="ba-foot">Softer lines, natural movement maintained.</div></div>
-    <div class="ba"><div class="ba-head">Dermal Fillers</div><div class="ba-body"><div class="ba-half"><img src="before3.jpg"></div><div class="ba-half"><img src="after3.jpg"></div></div><div class="ba-foot">Subtle lip/cheek enhancement for balance.</div></div>
-    <div class="ba"><div class="ba-head">Skin Health</div><div class="ba-body"><div class="ba-half"><img src="before4.jpg"></div><div class="ba-half"><img src="after4.jpg"></div></div><div class="ba-foot">Brighter tone and refined texture.</div></div>
+    <div class="ba"><div class="ba-head">Skin Boosters</div><div class="ba-body"><div class="ba-half"><img src="before1.jpg" alt="Before skin booster"></div><div class="ba-half"><img src="after1.jpg" alt="After skin booster"></div></div><div class="ba-foot">Hydration & glow after a course of treatment.</div></div>
+    <div class="ba"><div class="ba-head">Wrinkle Softening</div><div class="ba-body"><div class="ba-half"><img src="before2.jpg" alt="Before wrinkle softening"></div><div class="ba-half"><img src="after2.jpg" alt="After wrinkle softening"></div></div><div class="ba-foot">Softer lines, natural movement maintained.</div></div>
+    <div class="ba"><div class="ba-head">Dermal Fillers</div><div class="ba-body"><div class="ba-half"><img src="before3.jpg" alt="Before dermal fillers"></div><div class="ba-half"><img src="after3.jpg" alt="After dermal fillers"></div></div><div class="ba-foot">Subtle lip/cheek enhancement for balance.</div></div>
+    <div class="ba"><div class="ba-head">Skin Health</div><div class="ba-body"><div class="ba-half"><img src="before4.jpg" alt="Before skin health treatment"></div><div class="ba-half"><img src="after4.jpg" alt="After skin health treatment"></div></div><div class="ba-foot">Brighter tone and refined texture.</div></div>
   </div>
 </section>
 
@@ -238,24 +262,37 @@
 
 <footer>
   <div class="container footgrid">
-    <div class="logo"><img src="BWA-Logo-no-name-PRINT.svg?v=2" class="logo-img"/>Beautywithin Aesthetics</div>
+    <div class="logo"><img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>Beautywithin Aesthetics</div>
     <p class="small muted">© <span id="year"></span> Beautywithin Aesthetics</p>
   </div>
 </footer>
 
-<a class="whatsapp-fab glow" href="https://wa.me/447714201913" target="_blank" rel="noopener">WhatsApp</a>
+<a class="whatsapp-fab glow" href="https://wa.me/447714201913" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
 
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const btn = document.querySelector('.menu-toggle');
-const panel = document.getElementById('mobileMenu');
-function closeMenu(){ panel.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
-btn.addEventListener('click', () => {
-  const open = panel.classList.toggle('open');
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
-panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
+  // Year
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Mobile menu logic
+  const btn = document.querySelector('.menu-toggle');
+  const panel = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('menuBackdrop');
+
+  function closeMenu(){
+    panel.classList.remove('open');
+    backdrop.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){
+    const isOpen = panel.classList.toggle('open');
+    backdrop.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  btn.addEventListener('click', toggleMenu);
+  backdrop.addEventListener('click', closeMenu);
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
 </script>
 </body>
 </html>
