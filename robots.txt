@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aestheticsnearme.co.uk/sitemap.xml
