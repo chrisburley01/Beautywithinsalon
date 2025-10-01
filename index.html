@@ -3,11 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Beautywithin Aesthetics | By Joanne Burley</title>
-  <meta name="description" content="Beautywithin Aesthetics by Joanne Burley – professional, safe, natural-looking aesthetic treatments." />
+  <meta name="description" content="Beautywithin Aesthetics by Joanne Burley – professional, safe, natural-looking aesthetic treatments in Woodkirk serving Leeds & Dewsbury. Call 07714 201913." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aestheticsnearme.co.uk/" />
+
+  <!-- Favicons -->
   <link rel="icon" href="BWA-Logo-no-name-PRINT.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph / Twitter (no visual change) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aestheticsnearme.co.uk/" />
+  <meta property="og:title" content="Beautywithin Aesthetics | By Joanne Burley" />
+  <meta property="og:description" content="Professional, safe, natural-looking aesthetic treatments in Woodkirk serving Leeds & Dewsbury. Call 07714 201913." />
+  <meta property="og:image" content="https://aestheticsnearme.co.uk/joanne.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Beautywithin Aesthetics | By Joanne Burley" />
+  <meta name="twitter:description" content="Professional, safe, natural-looking aesthetic treatments in Woodkirk serving Leeds & Dewsbury. Call 07714 201913." />
+  <meta name="twitter:image" content="https://aestheticsnearme.co.uk/joanne.jpg" />
+
   <style>
     :root{--bg:#fff;--text:#222;--muted:#666;--brand:#d4acc5;--brand-dark:#8e7686;--card:#fff6f9;--shadow:0 10px 24px rgba(0,0,0,.06);--radius:18px}
     *{box-sizing:border-box}
@@ -24,6 +46,9 @@
     .cta-btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:var(--shadow)}
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
     section,main{scroll-margin-top:84px}
+
+    /* Visually-hidden utility (for hidden H1) */
+    .vh{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
     /* Glow pulse (used by buttons + hamburger) */
     .glow { animation: pulseGlow 2s infinite; }
@@ -110,6 +135,9 @@
 </head>
 <body>
 
+<!-- Hidden H1 for SEO: no visual change -->
+<h1 class="vh">Aesthetics Clinic in Woodkirk (WF12) – Wrinkle Softening, Dermal Fillers & Skin Treatments</h1>
+
 <header>
   <nav class="container nav">
     <div class="logo">
@@ -134,7 +162,7 @@
   <!-- mobile overlay + menu -->
   <div class="mobile-wrap">
     <div id="menuBackdrop" class="menu-backdrop"></div>
-    <div id="mobileMenu" class="mobile-menu">
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu">
       <a href="#home">Home</a>
       <a href="#treatments">Treatments</a>
       <a href="#prices">Prices</a>
@@ -258,12 +286,20 @@
   <h2>Book Your Consultation</h2>
   <p><strong>Phone:</strong> <a href="tel:+447714201913" class="cta-btn glow">07714 201913</a></p>
   <p><strong>WhatsApp:</strong> <a href="https://wa.me/447714201913" target="_blank" rel="noopener" class="cta-btn glow">Chat now</a></p>
+  <p><strong>Address:</strong> 67 Woodkirk Gardens, WF12 7JA</p>
 </section>
 
 <footer>
   <div class="container footgrid">
-    <div class="logo"><img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>Beautywithin Aesthetics</div>
-    <p class="small muted">© <span id="year"></span> Beautywithin Aesthetics</p>
+    <div class="logo">
+      <img src="BWA-Logo-no-name-PRINT.svg?v=2" alt="Beautywithin Aesthetics logo" class="logo-img"/>
+      Beautywithin Aesthetics
+    </div>
+    <div>
+      <p class="small muted" style="margin:6px 0 0"><strong>Visit:</strong> 67 Woodkirk Gardens, WF12 7JA</p>
+      <p class="small muted" style="margin:6px 0 0"><strong>Call:</strong> <a href="tel:+447714201913">+44 7714 201913</a></p>
+      <p class="small muted">© <span id="year"></span> Beautywithin Aesthetics</p>
+    </div>
   </div>
 </footer>
 
@@ -294,5 +330,63 @@
   panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
 </script>
+
+<!-- ======= Structured Data (no visual change) ======= -->
+<!-- LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Beautywithin Aesthetics",
+  "url": "https://aestheticsnearme.co.uk/",
+  "image": "https://aestheticsnearme.co.uk/joanne.jpg",
+  "telephone": "+447714201913",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "67 Woodkirk Gardens",
+    "postalCode": "WF12 7JA",
+    "addressLocality": "Dewsbury",
+    "addressRegion": "West Yorkshire",
+    "addressCountry": "UK"
+  },
+  "areaServed": ["Woodkirk","Tingley","Leeds","Dewsbury","Wakefield"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }]
+}
+</script>
+
+<!-- Services -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "itemListElement":[
+    {"@type":"Service","name":"Wrinkle Softening","description":"Anti-wrinkle injections. Prices start from £200."},
+    {"@type":"Service","name":"Dermal Fillers","description":"Lips, cheeks and jawline contouring."},
+    {"@type":"Service","name":"Skin Boosters","description":"Hydrating injectables for glow and elasticity."},
+    {"@type":"Service","name":"Skin Health","description":"Microneedling, peels and medical facials."}
+  ]
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How much does wrinkle softening cost?","acceptedAnswer":{"@type":"Answer","text":"Wrinkle softening starts from £200 depending on area and consultation."}},
+    {"@type":"Question","name":"Do you offer consultations?","acceptedAnswer":{"@type":"Answer","text":"Yes — friendly, no-obligation consultations to plan your treatment."}},
+    {"@type":"Question","name":"Where are you based?","acceptedAnswer":{"@type":"Answer","text":"We’re at 67 Woodkirk Gardens, WF12 7JA, serving Woodkirk, Tingley, Leeds and Dewsbury."}}
+  ]
+}
+</script>
+<!-- ================================================ -->
+
 </body>
 </html>
