@@ -25,7 +25,7 @@
     .cta-btn:hover{background:var(--brand-dark);text-decoration:none}
     section,main{scroll-margin-top:84px}
 
-    /* Glow pulse for buttons (applied to all key CTAs) */
+    /* Glow pulse for buttons */
     .glow { animation: pulseGlow 2s infinite; }
     @keyframes pulseGlow {
       0%   { box-shadow: 0 0 0px rgba(212,172,197,0.65); }
@@ -55,15 +55,13 @@
     .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
     .about img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/3}
 
-    /* Branded BEFORE/AFTER cards */
+    /* Gallery */
     .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
     .ba{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid #f0e6ee}
     .ba-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);font-weight:700}
     .ba-body{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #f3e9f1}
-    .ba-half{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative}
-    .ba-half.before{background:linear-gradient(135deg,#f4e9f1,#ffffff)}
-    .ba-half.after{background:linear-gradient(135deg,#fbefff,#f6e9f3)}
-    .ba-label{position:absolute;top:8px;left:8px;font-size:12px;background:#fff;border:1px solid #e9ddea;border-radius:999px;padding:4px 8px;color:#7a5f77}
+    .ba-half{aspect-ratio:3/4;overflow:hidden}
+    .ba-half img{width:100%;height:100%;object-fit:cover;display:block}
     .ba-foot{padding:10px 14px;color:var(--muted);font-size:13px;border-top:1px solid #f3e9f1}
 
     /* Footer */
@@ -72,7 +70,7 @@
 
     /* WhatsApp floating button */
     .whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:900;font-weight:700}
-    .whatsapp-fab.glow { animation: pulseGlow 2.2s infinite; } /* slightly offset timing so not all buttons pulse in sync */
+    .whatsapp-fab.glow { animation: pulseGlow 2.2s infinite; }
     .whatsapp-fab:hover{filter:brightness(.95);text-decoration:none}
 
     @media (max-width:880px){.hero-grid,.about{grid-template-columns:1fr}}
@@ -183,12 +181,50 @@
 <section id="gallery" class="section container">
   <p class="kicker">Gallery</p>
   <h2>Before & After</h2>
-  <p class="muted">Upload your own client results when ready. For now, these branded placeholders show the layout.</p>
+  <p class="muted">Real client results with Joanne. Subtle, safe, natural-looking enhancements.</p>
+
   <div class="ba-grid">
-    <div class="ba"><div class="ba-head">Skin Boosters</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Hydration & glow after a course of treatment.</div></div>
-    <div class="ba"><div class="ba-head">Wrinkle Softening</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Softer lines, natural movement maintained.</div></div>
-    <div class="ba"><div class="ba-head">Dermal Fillers</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Subtle lip/cheek enhancement for balance.</div></div>
-    <div class="ba"><div class="ba-head">Skin Health</div><div class="ba-body"><div class="ba-half before"><span class="ba-label">Before</span></div><div class="ba-half after"><span class="ba-label">After</span></div></div><div class="ba-foot">Brighter tone and refined texture.</div></div>
+    <!-- Set 1 -->
+    <div class="ba">
+      <div class="ba-head">Lip Enhancement</div>
+      <div class="ba-body">
+        <div class="ba-half">
+          <img src="before1.jpg" alt="Before lip enhancement" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="ba-half">
+          <img src="after1.jpg" alt="After lip enhancement" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="ba-foot">Subtle hydration and definition for natural lips.</div>
+    </div>
+
+    <!-- Set 2 -->
+    <div class="ba">
+      <div class="ba-head">Cheek Filler</div>
+      <div class="ba-body">
+        <div class="ba-half">
+          <img src="before3.jpg" alt="Before cheek filler" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="ba-half">
+          <img src="after3.jpg" alt="After cheek filler" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="ba-foot">Added volume and lift for a refreshed look.</div>
+    </div>
+
+    <!-- Set 3 -->
+    <div class="ba">
+      <div class="ba-head">Skin Booster</div>
+      <div class="ba-body">
+        <div class="ba-half">
+          <img src="before4.jpg" alt="Before skin booster" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="ba-half">
+          <img src="after4.jpg" alt="After skin booster" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="ba-foot">Hydrated, glowing skin after booster treatment.</div>
+    </div>
   </div>
 </section>
 
@@ -200,7 +236,7 @@
       <p>Joanne Burley is the face behind Beautywithin Aesthetics. With a passion for subtle enhancement and client education, Joanne focuses on treatments that prioritise safety, comfort and natural-looking results.</p>
       <ul class="muted"><li>Fully insured & trained</li><li>Clean, private treatment space</li><li>Strict hygiene standards</li></ul>
     </div>
-    <img src="joanne.jpg?v=2" alt="Joanne Burley, Beautywithin Aesthetics">
+    <img src="Joanne.jpg?v=2" alt="Joanne Burley, Beautywithin Aesthetics">
   </div>
 </section>
 
